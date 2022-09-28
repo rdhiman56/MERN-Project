@@ -3,3 +3,25 @@
 Ecommerce End to End Project
 
 Server connection :- Express
+
+// Connect Mongo DB to server
+
+After brew installation, here are commands:
+xcode-select --install
+brew tap mongodb/brew
+brew install mongodb-community@5.0
+brew services start mongodb-community@5.0
+brew services stop mongodb-community@5.0
+mongod --config /opt/homebrew/etc/mongod.conf --fork
+mongosh
+https://www.youtube.com/watch?v=s1WQ0eEpqqg
+
+MONGO Learining:--
+setup mongo using terminal : zshrc, vim .zshrc , export brew mongo path etc
+https://www.anycodings.com/questions/zsh-command-not-found-mongo
+
+Mongo DB setup :- "show dbs" (all database), "use ecommerce" (to createdatabase), Collection "db.students.insertOne({name:"Rahul", color:"sexy"})" (Add collection)
+https://www.youtube.com/watch?v=AYDP1S5BbTo
+
+MongoDB:- Main video
+https://www.youtube.com/watch?v=AN3t-OmdyKA

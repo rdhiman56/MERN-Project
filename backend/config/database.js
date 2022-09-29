@@ -1,13 +1,18 @@
 const mongoose = require("mongoose");
 
-const connectDatabase = () => {
-    var dburl = "mongodb://127.0.0.1:27017/ecommerce";
-    mongoose.connect(dburl, function(err, data) {
-      if (err) {
-        throw err;
+const connectDatabase = async () => {
+    try {
+        const conn = await mongoose.connect(process.env.DB_URI, {
+          useNewUrlParser: true,
+          useUnifiedTopology: true,
+          //   useFindAndModify: false,
+        });
+        console.log(`MongoDB connecteed: ${conn.connection.host}`);
+      } catch (err) {
+        console.error(err);
+        process.exit(1);
       }
-      console.log(`db connected ${data.connection.host}`);
-    });
+
 //   mongoose
 //     .connect("mongodb://127.0.0.1:27017/Ecommerceapp")
 //     .then((data) => {
@@ -38,13 +43,6 @@ const connectDatabase = () => {
   //     console.log(err);
   //   });
 
-  // mongoose.connect(process.env.DB_URI, function(err, data) {
-  //     if(data){
-  //         console.log(`Mongodb connected with server : ${data.connection.host}`);
-  //     }else {
-  //         console.log(err);
-  //     }
-  // });
 };
 
 module.exports = connectDatabase;

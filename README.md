@@ -20,7 +20,13 @@ MONGO Learining:--
 setup mongo using terminal : zshrc, vim .zshrc , export brew mongo path etc
 https://www.anycodings.com/questions/zsh-command-not-found-mongo
 
-Mongo DB setup :- "show dbs" (all database), "use ecommerce" (to createdatabase), Collection "db.students.insertOne({name:"Rahul", color:"sexy"})" (Add collection)
+Mongo DB setup :- "show dbs" (all database), "use ecommerce" (to createdatabase), 
+
+Collection 
+find, create, limit, update:- 
+
+"db.students.insertOne({name:"Rahul", color:"sexy"})" (Add collection)
+db.personal.insertMany([{ name: "rahul"},{name: "dhiman"},{name:"harish"}])
 https://www.youtube.com/watch?v=AYDP1S5BbTo
 
 MongoDB:- Main video

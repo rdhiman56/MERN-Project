@@ -31,3 +31,13 @@ https://www.youtube.com/watch?v=AYDP1S5BbTo
 
 MongoDB:- Main video
 https://www.youtube.com/watch?v=AN3t-OmdyKA
+
+
+
+
+=>>>>>>>>>>>>>> Start to End Project >>>>>>>>>>>>>>>>
+
+1. Basic Server Connection
+2. connect DB
+3. Api creation - MongoDB using postman / collection / routing / func
+4. 

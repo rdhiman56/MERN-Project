@@ -40,4 +40,5 @@ https://www.youtube.com/watch?v=AN3t-OmdyKA
 1. Basic Server Connection
 2. connect DB
 3. Api creation - MongoDB using postman / collection / routing / func
-4. 
+4. backend-error-handling -> Handling uncought exception , unhandled proimise Rejection, wrong mongoDB id Error
+5. 

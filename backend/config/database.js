@@ -13,23 +13,6 @@ const connectDatabase = async () => {
         process.exit(1);
       }
 
-//   mongoose
-//     .connect("mongodb://127.0.0.1:27017/Ecommerceapp")
-//     .then((data) => {
-//       console.log(`Mongodb connected with server : ${data.connection.host}`);
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//     });
-  //   mongoose
-  //     .connect("mongodb://127.0.0.1:27017/Ecommerce")
-  //     .then((data) => {
-  //       console.log(`Mongodb connected with server : ${data.connection.host}`);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-
   // mongoose
   //   .connect("mongodb://127.0.0.1:27017/Ecommerce", {
   //     useNewUrlParser: true,

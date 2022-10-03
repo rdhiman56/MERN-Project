@@ -1,6 +1,7 @@
 const Product = require("../models/productModel");
 const ErrorHandler = require("../utils/errorhandler");
 const catchAsyncErrors = require("../middleware/catchAsyncError");
+const ApiFeatures = require("../utils/apifeatures");
 
 // Create Product - Admin
 exports.createProduct = catchAsyncErrors(async (req, res, next) => {
@@ -20,11 +21,17 @@ exports.createProduct = catchAsyncErrors(async (req, res, next) => {
 // };
 
 //Get All Products
-exports.getAllProduct = catchAsyncErrors(async (req, res) => {
-  const products = await Product.find();
+exports.getAllProducts = catchAsyncErrors(async (req, res) => {
+
+  const resultPerPage = 5;
+  const productCount = await Product.countDocuments();
+
+  const apiFeature = new ApiFeatures(Product.find(), req.query).search().filter().pagination(resultPerPage);
+  const products = await apiFeature.query;
+  // const products = await Product.find();
   res.status(200).json({
     success: true,
-    products,
+    products 
   });
 });
 
@@ -37,18 +44,18 @@ exports.getProductDetails = catchAsyncErrors(async (req, res, next) => {
     // next is a call back function.
     return next(new ErrorHandler("Product Not Found", 404));
   }
-
+  res.status(200).json({
+    success: true,
+    product,
+    productCount
+  });
+  
   // if(!product){
   //    return res.status(500).json({
   //       success: false,
   //       message: "Product not found"
   //    })
   // }
-
-  res.status(200).json({
-    success: true,
-    product,
-  });
 });
 
 // Update Product - Admin
